@@ -8,10 +8,7 @@
 import Foundation
 import CoreLocation
 
-
-
 typealias URLString =  String
-
 
 protocol NearByViewmodelDelegate: AnyObject {
     func reload()
@@ -25,10 +22,10 @@ class NearbyViewModel: ViewModelProtocol, LocationManagerReprestable {
     private var longitude: String = "0.0"
     private var range : Int = 1
     var isLoading: Bool = false
+    var venues =  [Venue]()
     
     
     weak var delegate: NearByViewmodelDelegate?
-    var venues =  [Venue]()
     let dbManager =  CoreDataManager.shared
     
     init(){
