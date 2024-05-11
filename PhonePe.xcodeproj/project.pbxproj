@@ -25,6 +25,10 @@
 		FA73C5D82BEF533100323E1F /* NearbyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C5D52BEF533100323E1F /* NearbyTableViewCell.swift */; };
 		FA73C5DA2BEF58EB00323E1F /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C5D92BEF58EB00323E1F /* NetworkRoute.swift */; };
 		FA73C5DD2BEF598900323E1F /* NearbyRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C5DC2BEF598900323E1F /* NearbyRoute.swift */; };
+		FA73C5F02BEF75DB00323E1F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C5EF2BEF75DB00323E1F /* CoreDataManager.swift */; };
+		FA73C5F42BEF762700323E1F /* PhonePeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA73C5F22BEF762700323E1F /* PhonePeModel.xcdatamodeld */; };
+		FA73C5F72BEF765900323E1F /* VenueDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C5F52BEF765900323E1F /* VenueDB+CoreDataClass.swift */; };
+		FA73C5F82BEF765900323E1F /* VenueDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C5F62BEF765900323E1F /* VenueDB+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		FA73C5D62BEF533100323E1F /* NearbyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearbyTableViewCell.xib; sourceTree = "<group>"; };
 		FA73C5D92BEF58EB00323E1F /* NetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
 		FA73C5DC2BEF598900323E1F /* NearbyRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyRoute.swift; sourceTree = "<group>"; };
+		FA73C5EF2BEF75DB00323E1F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FA73C5F32BEF762700323E1F /* PhonePeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhonePeModel.xcdatamodel; sourceTree = "<group>"; };
+		FA73C5F52BEF765900323E1F /* VenueDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VenueDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA73C5F62BEF765900323E1F /* VenueDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VenueDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 				FA73C5B72BEF2F5A00323E1F /* Feature */,
 				FA73C5A32BEF2E3500323E1F /* AppDelegate.swift */,
 				FA73C5AC2BEF2E3600323E1F /* Assets.xcassets */,
+				FA73C5F22BEF762700323E1F /* PhonePeModel.xcdatamodeld */,
 				FA73C5AE2BEF2E3600323E1F /* LaunchScreen.storyboard */,
 				FA73C5B12BEF2E3600323E1F /* Info.plist */,
 			);
@@ -101,6 +110,7 @@
 		FA73C5B82BEF2F6500323E1F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FA73C5F12BEF760300323E1F /* CoreDataManager */,
 				FA73C5D12BEF3CAA00323E1F /* LocationManager */,
 				FA73C5C32BEF367500323E1F /* GlobalProtocol */,
 				FA73C5C02BEF363A00323E1F /* Networking */,
@@ -112,8 +122,9 @@
 		FA73C5B92BEF2F7500323E1F /* Nearby */ = {
 			isa = PBXGroup;
 			children = (
+				FA73C5F92BEF767A00323E1F /* Model */,
+				FA73C5DB2BEF597500323E1F /* ViewModel */,
 				FA73C5C82BEF3A6C00323E1F /* View */,
-				FA73C5CB2BEF3A9200323E1F /* NearbyModel.swift */,
 			);
 			path = Nearby;
 			sourceTree = "<group>";
@@ -141,7 +152,6 @@
 		FA73C5C82BEF3A6C00323E1F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA73C5DB2BEF597500323E1F /* ViewModel */,
 				FA73C5D42BEF532200323E1F /* NearbyTableViewCell */,
 				FA73C5BA2BEF2F9000323E1F /* NearbyViewController.swift */,
 				FA73C5BB2BEF2F9000323E1F /* NearbyViewController.xib */,
@@ -173,6 +183,24 @@
 				FA73C5DC2BEF598900323E1F /* NearbyRoute.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA73C5F12BEF760300323E1F /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				FA73C5EF2BEF75DB00323E1F /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		FA73C5F92BEF767A00323E1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA73C5CB2BEF3A9200323E1F /* NearbyModel.swift */,
+				FA73C5F52BEF765900323E1F /* VenueDB+CoreDataClass.swift */,
+				FA73C5F62BEF765900323E1F /* VenueDB+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA73C5D82BEF533100323E1F /* NearbyTableViewCell.swift in Sources */,
+				FA73C5F42BEF762700323E1F /* PhonePeModel.xcdatamodeld in Sources */,
 				FA73C5DA2BEF58EB00323E1F /* NetworkRoute.swift in Sources */,
 				FA73C5BF2BEF325D00323E1F /* NetworkManager.swift in Sources */,
+				FA73C5F02BEF75DB00323E1F /* CoreDataManager.swift in Sources */,
 				FA73C5CE2BEF3AAB00323E1F /* ViewmodelProtocol.swift in Sources */,
 				FA73C5DD2BEF598900323E1F /* NearbyRoute.swift in Sources */,
 				FA73C5CA2BEF3A8800323E1F /* NearbyViewModel.swift in Sources */,
@@ -260,6 +290,8 @@
 				FA73C5C22BEF364700323E1F /* NetworkError.swift in Sources */,
 				FA73C5A42BEF2E3500323E1F /* AppDelegate.swift in Sources */,
 				FA73C5CC2BEF3A9200323E1F /* NearbyModel.swift in Sources */,
+				FA73C5F72BEF765900323E1F /* VenueDB+CoreDataClass.swift in Sources */,
+				FA73C5F82BEF765900323E1F /* VenueDB+CoreDataProperties.swift in Sources */,
 				FA73C5BD2BEF2F9000323E1F /* NearbyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +521,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA73C5F22BEF762700323E1F /* PhonePeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA73C5F32BEF762700323E1F /* PhonePeModel.xcdatamodel */,
+			);
+			currentVersion = FA73C5F32BEF762700323E1F /* PhonePeModel.xcdatamodel */;
+			path = PhonePeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA73C5982BEF2E3500323E1F /* Project object */;
 }
