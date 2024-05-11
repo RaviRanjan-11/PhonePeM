@@ -29,6 +29,7 @@ class NearbyViewModel: ViewModelProtocol, LocationManagerReprestable {
     
     weak var delegate: NearByViewmodelDelegate?
     var venues =  [Venue]()
+    let dbManager =  CoreDataManager.shared
     
     init(){
         locationmanager = LocationManager()
@@ -79,12 +80,25 @@ class NearbyViewModel: ViewModelProtocol, LocationManagerReprestable {
                 guard let venues = data.venues else {return}
                 self?.venues.append(contentsOf: venues)
                 self?.delegate?.reload()
+                self?.saveToLocal()
             case .failure(let failure):
                 print(failure)
             }
         }
     }
     
+    
+    private func saveToLocal() {
+        
+        let context = dbManager.persitanceContaner.viewContext
+        for venue in venues {
+            let entity = VenueDB(context: context)
+            entity.address = venue.address
+            entity.city = venue.city
+            entity.name = venue.name
+            dbManager.save()
+        }
+    }
     
     func loadMoreData() {
         guard !isLoading else {return}

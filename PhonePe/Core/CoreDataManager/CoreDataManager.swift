@@ -23,7 +23,7 @@ class CoreDataManager {
         }
     }
 
-    func getAllMovies() -> [VenueDB] {
+    func getallVenues() -> [VenueDB] {
         
         //Strongly typed as we say the request for fetch is of Movie entity
         let fetchRequest: NSFetchRequest<VenueDB> = VenueDB.fetchRequest()
