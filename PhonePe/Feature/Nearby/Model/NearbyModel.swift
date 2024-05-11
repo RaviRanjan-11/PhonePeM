@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 struct NearByLocation: Codable {
     let venues: [Venue]?
 }
@@ -26,5 +27,13 @@ struct Venue: Codable {
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         address = try container.decodeIfPresent(String.self, forKey: .address) ?? ""
         city = try container.decodeIfPresent(String.self, forKey: .city) ?? ""
+    }
+}
+
+extension Venue {
+    init(managedObject: VenueDB) {
+        self.address = managedObject.address
+        self.city = managedObject.city
+        self.name = managedObject.name
     }
 }

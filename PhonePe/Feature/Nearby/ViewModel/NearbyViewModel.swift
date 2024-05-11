@@ -33,6 +33,7 @@ class NearbyViewModel: ViewModelProtocol, LocationManagerReprestable {
         locationmanager.requestLocationAccess()
         locationmanager.delegate = self
         self.isLoading = true
+        fetchLocalVenue()
         
     }
     
@@ -46,6 +47,13 @@ class NearbyViewModel: ViewModelProtocol, LocationManagerReprestable {
         self.longitude = longitude
         serviceRequestForNearByLocation()
     }
+    
+    func fetchLocalVenue() {
+       let localVenue = dbManager.getallVenues()
+        venues = localVenue.map { Venue(managedObject: $0) }
+        delegate?.reload()
+    }
+    
     
     private func createRequestparam() -> [String: Any] {
         
